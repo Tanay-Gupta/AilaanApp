@@ -29,3 +29,39 @@ const kSubtitleTextSyle = TextStyle(
   color: kTextColor,
   // fontWeight: FontWeight.bold,
 );
+
+const String listOfSupportedSitesUrl = 'https://kontests.net/api/v1/sites';
+
+const String allContestUrl = 'https://kontests.net/api/v1/all';
+
+const String codeChefUrl = 'https://kontests.net/api/v1/code_chef';
+
+const String codeForcesUrl = 'https://kontests.net/api/v1/codeforces';
+
+const String codeForcesGymUrl = 'https://kontests.net/api/v1/codeforces_gym';
+
+const String topCoderUrl = 'https://kontests.net/api/v1/top_coder';
+
+const String atCoderUrl = 'https://kontests.net/api/v1/at_coder';
+
+const String cSAcademyUrl = 'https://kontests.net/api/v1/cs_academy';
+
+const String hackerRankUrl = 'https://kontests.net/api/v1/hacker_rank';
+
+const String hackerEarthUrl = 'https://kontests.net/api/v1/hacker_earth';
+
+const String kickStartUrl = 'https://kontests.net/api/v1/kick_start';
+
+const String leetCodeUrl = 'https://kontests.net/api/v1/leet_code';
+
+
+
+
+// Feild	Description
+// name	Contest name.
+// url	Contest link.
+// start_time	Start time of the contest in UTC (Format: %Y-%m-%dT%H:%M:%S.%LZ) if exists, - otherwise.
+// end_time	End time of the contest in UTC (Format: %Y-%m-%dT%H:%M:%S.%LZ) if exists, - otherwise.
+// duration	Contest duration in seconds if exists, - otherwise.
+// in_24_hours	Yes if the contest starts within the next 24 hours, No otherwise.
+// status	CODING if the contest is running, BEFORE otherwise.
