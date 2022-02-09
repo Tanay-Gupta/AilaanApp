@@ -1,4 +1,5 @@
 import 'package:contestalert/constants.dart';
+import 'package:contestalert/models/allcontestData.dart';
 import 'package:contestalert/models/contestData.dart';
 
 import 'package:http/http.dart' as http;
@@ -11,14 +12,14 @@ class APIManager {
     List contestDataAsList = [];
 
     try {
-      var response = await client.get(Uri.parse(codeChefUrl));
+      var response = await client.get(Uri.parse(allContestUrl));
 
       if (response.statusCode == 200) {
         var jsonString = response.body;
         var jsonMap = json.decode(jsonString);
 
         contestDataAsList =
-            jsonMap.map((model) => ContestData.fromJson(model)).toList();
+            jsonMap.map((model) => AllContestData.fromJson(model)).toList();
         return contestDataAsList;
       }
     } catch (Exception) {

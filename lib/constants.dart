@@ -8,27 +8,43 @@ const kGreenColor = Color(0xFF49CC96);
 
 // My Text Styles
 const kHeadingextStyle = TextStyle(
+  overflow: TextOverflow.ellipsis,
   fontSize: 28,
   color: kTextColor,
   fontWeight: FontWeight.bold,
 );
 const kSubheadingextStyle = TextStyle(
+  overflow: TextOverflow.ellipsis,
   fontSize: 18,
   color: Color(0xFF61688B),
   height: 2,
 );
 
 const kTitleTextStyle = TextStyle(
+  overflow: TextOverflow.ellipsis,
   fontSize: 20,
   color: kTextColor,
   fontWeight: FontWeight.bold,
 );
 
 const kSubtitleTextSyle = TextStyle(
+  overflow: TextOverflow.ellipsis,
   fontSize: 18,
   color: kTextColor,
   // fontWeight: FontWeight.bold,
 );
+
+var pictureId = {
+  'CodeChef': 'assets/icons/codechef.svg',
+  'AtCoder': 'assets/icons/atcoder.svg',
+  'CodeForces': 'assets/icons/codeforces.svg',
+  'HackerEarth': 'assets/icons/hackerearth.svg',
+  'HackerRank': 'assets/icons/hackerrank.svg',
+  'LeetCode': 'assets/icons/leetcode.svg',
+  'Kick Start': 'assets/icons/google.svg',
+  'TopCoder': '',
+  'CS Academy': 'assets/icons/csAcadmey.png'
+};
 
 const String listOfSupportedSitesUrl = 'https://kontests.net/api/v1/sites';
 

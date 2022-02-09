@@ -16,7 +16,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Contest Alert',
       theme: ThemeData(),
-      home: CodechefPage(),
+      //  home: HomePage(),
+      routes: {
+        '/': (context) => HomePage(),
+        '/allcontest': (context) => CodechefPage()
+      },
     );
   }
 }
