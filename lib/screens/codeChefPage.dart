@@ -10,16 +10,13 @@ class CodechefPage extends StatefulWidget {
 }
 
 class _CodechefPageState extends State<CodechefPage> {
-  List _codechefModel = [];
+  late Future<List> futurelist;
 
   @override
   void initState() {
-    receivingData();
-    super.initState();
-  }
+    futurelist = APIManager().getDataAsList();
 
-  void receivingData() async {
-    _codechefModel = await APIManager().getDataAsList();
+    super.initState();
   }
 
   @override
@@ -27,16 +24,31 @@ class _CodechefPageState extends State<CodechefPage> {
     return Scaffold(
         body: Container(
             color: Colors.white,
-            child: ListView.builder(
-                itemCount: _codechefModel.length,
-                itemBuilder: (context, index) {
-                  return Container(
-                    height: 100,
-                    color: Colors.redAccent,
-                    child: Row(
-                      children: [Text(_codechefModel[index].name)],
-                    ),
-                  );
-                })));
+            child: FutureBuilder<List>(
+              future: futurelist,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return ListView.builder(
+                      itemCount: snapshot.data!.length,
+                      itemBuilder: (context, index) {
+                        // FOR RUNNING CONTEST USE 'CODING'
+                        // 'BEFORE' FOR UPCOMING CONTESTs
+                        if (snapshot.data![index].status == 'BEFORE') {
+                          return Container(
+                            height: 100,
+                            color: Colors.redAccent,
+                            child: Row(
+                              children: [Text(snapshot.data![index].name)],
+                            ),
+                          );
+                        } else {
+                          return (const SizedBox());
+                        }
+                      });
+                } else {
+                  return Center(child: const CircularProgressIndicator());
+                }
+              },
+            )));
   }
 }

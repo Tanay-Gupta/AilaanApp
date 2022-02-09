@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Contest Alert',
       theme: ThemeData(),
-      home: HomePage(),
+      home: CodechefPage(),
     );
   }
 }
