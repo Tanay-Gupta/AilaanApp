@@ -58,7 +58,20 @@ List contestName = [
   'LeetCode',
   'Kick Start',
   'TopCoder',
+  'AtCoder'
 ];
+var ContestWebsiteUrl = {
+  'CodeChef': 'www.codechef.com',
+  'CodeForces': 'www.codeforces.com',
+  'HackerEarth': 'www.hackerearth.com',
+  'CF::Gym': 'www.codeforces.com/gym',
+  'HackerRank': 'www.hackerrank.com',
+  'LeetCode': 'www.leetcode.com',
+  'Kick Start': 'www.codingcompetitions.withgoogle.com',
+  'TopCoder': 'www.topcoder.com',
+  'AtCoder': 'www.atcoder.jp',
+  'CS Academy': 'www.csacademy.com'
+};
 var contestNameWithUrl = {
   'CodeChef': codeChefUrl,
   'CodeForces': codeForcesUrl,
@@ -68,6 +81,7 @@ var contestNameWithUrl = {
   'LeetCode': leetCodeUrl,
   'Kick Start': kickStartUrl,
   'TopCoder': topCoderUrl,
+  'AtCoder': atCoderUrl
 };
 
 const String listOfSupportedSitesUrl = 'https://kontests.net/api/v1/sites';

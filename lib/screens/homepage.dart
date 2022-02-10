@@ -33,7 +33,11 @@ class _HomePageState extends State<HomePage> {
                       onTap: () {
                         Navigator.pushNamed(context, "/allcontest");
                       },
-                      child: SvgPicture.asset("assets/icons/menu.svg")),
+                      child: SvgPicture.asset(
+                        "assets/icons/menu.svg",
+                        width: 25,
+                        height: 25,
+                      )),
                   Image.asset("assets/images/user.png"),
                 ],
               ),
@@ -97,6 +101,11 @@ class _HomePageState extends State<HomePage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) => ContestDetailsScreen(
+                        contestSiteUrl:
+                            ContestWebsiteUrl[contestName[itemIndex]]
+                                .toString(),
+                        contestImageUrl:
+                            pictureId[contestName[itemIndex]].toString(),
                         contestName: contestName[itemIndex],
                         contestUrl: contestNameWithUrl[contestName[itemIndex]]
                             .toString(),

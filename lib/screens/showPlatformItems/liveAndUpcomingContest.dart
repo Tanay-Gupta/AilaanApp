@@ -60,10 +60,10 @@ class _LiveAndUpcomingContestState extends State<LiveAndUpcomingContest> {
                       number: (index + 1) < 10
                           ? '0' + (index + 1).toString()
                           : (index + 1).toString(),
-                      // duration: DurationExtract(snapshot.data![index].endTime
-                      //     .toString()
-                      //     .substring(0, 10)),
-                      duration: snapshot.data![index].endTime.toString(),
+                      duration: DurationExtract(snapshot.data![index].endTime
+                          .toString()
+                          .substring(0, 10)),
+                      //   duration: snapshot.data![index].endTime.toString(),
 
                       title: snapshot.data![index].name,
                     );

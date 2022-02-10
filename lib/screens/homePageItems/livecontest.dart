@@ -49,22 +49,22 @@ class _LiveContestState extends State<LiveContest> {
                     // FOR RUNNING CONTEST USE 'CODING'
                     // 'BEFORE' FOR UPCOMING CONTESTs
 
-                    //if (snapshot.data![index].status == 'CODING') {
-                    String imgurl = snapshot.data![index].site;
+                    if (snapshot.data![index].status == 'CODING') {
+                      String imgurl = snapshot.data![index].site;
 
-                    return ListContainer(
-                      imgUrl: pictureId[imgurl].toString(),
-                      number: (index + 1) < 10
-                          ? '0' + (index + 1).toString()
-                          : (index + 1).toString(),
-                      duration: DurationExtract(snapshot.data![index].endTime
-                          .toString()
-                          .substring(0, 10)),
-                      title: snapshot.data![index].name,
-                    );
-                    // } else {
-                    //   return (const SizedBox());
-                    // }
+                      return ListContainer(
+                        imgUrl: pictureId[imgurl].toString(),
+                        number: (index + 1) < 10
+                            ? '0' + (index + 1).toString()
+                            : (index + 1).toString(),
+                        duration: DurationExtract(snapshot.data![index].endTime
+                            .toString()
+                            .substring(0, 10)),
+                        title: snapshot.data![index].name,
+                      );
+                    } else {
+                      return (const SizedBox());
+                    }
                   });
             } else {
               return Center(

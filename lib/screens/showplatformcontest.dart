@@ -7,9 +7,15 @@ import '../constants.dart';
 class ContestDetailsScreen extends StatelessWidget {
   final String contestUrl;
   final String contestName;
+  final String contestImageUrl;
+  final String contestSiteUrl;
 
   const ContestDetailsScreen(
-      {Key? key, required this.contestUrl, required this.contestName})
+      {Key? key,
+      required this.contestUrl,
+      required this.contestSiteUrl,
+      required this.contestImageUrl,
+      required this.contestName})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -28,7 +34,7 @@ class ContestDetailsScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(left: 20, top: 50, right: 20),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -39,66 +45,35 @@ class ContestDetailsScreen extends StatelessWidget {
                         },
                         child: Container(
                             // color: Colors.green,
-                            height: 35,
-                            width: 35,
+                            height: 30,
+                            width: 30,
                             child: SvgPicture.asset(
                               "assets/icons/arrow-left.svg",
                             )),
                       ),
-                      SvgPicture.asset("assets/icons/more-vertical.svg"),
+                      SvgPicture.asset(
+                        "assets/icons/more-vertical.svg",
+                        height: 30,
+                        width: 30,
+                      ),
                     ],
                   ),
                   const SizedBox(height: 20),
-                  ClipPath(
-                    clipper: BestSellerClipper(),
-                    child: Container(
-                      color: kBestSellerColor,
-                      padding: const EdgeInsets.only(
-                          left: 10, top: 5, right: 20, bottom: 5),
-                      child: Text(
-                        "BestSeller".toUpperCase(),
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
+                  SvgPicture.asset(
+                    contestImageUrl,
+                    width: 100,
+                    height: 100,
                   ),
-                  SizedBox(height: 16),
-                  Text(contestName, style: kHeadingextStyle),
-                  SizedBox(height: 16),
-                  Row(
-                    children: <Widget>[
-                      SvgPicture.asset("assets/icons/person.svg"),
-                      SizedBox(width: 5),
-                      Text("18K"),
-                      SizedBox(width: 20),
-                      SvgPicture.asset("assets/icons/star.svg"),
-                      SizedBox(width: 5),
-                      Text("4.8")
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: "\$50 ",
-                          style: kHeadingextStyle.copyWith(fontSize: 32),
-                        ),
-                        TextSpan(
-                          text: "\$70",
-                          style: TextStyle(
-                            color: kTextColor.withOpacity(.5),
-                            decoration: TextDecoration.lineThrough,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  const SizedBox(height: 16),
+                  Text(contestName,
+                      style: kHeadingextStyle.copyWith(fontSize: 35)),
+                  const SizedBox(height: 16),
+                  Text(contestSiteUrl),
+                  const SizedBox(height: 80),
                 ],
               ),
             ),
-            SizedBox(height: 60),
+            //  SizedBox(height: 60),
             Expanded(
               child: Container(
                 width: double.infinity,
@@ -129,24 +104,5 @@ class ContestDetailsScreen extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class BestSellerClipper extends CustomClipper<Path> {
-  @override
-  getClip(Size size) {
-    var path = Path();
-    path.lineTo(size.width - 20, 0);
-    path.lineTo(size.width, size.height / 2);
-    path.lineTo(size.width - 20, size.height);
-    path.lineTo(0, size.height);
-    path.lineTo(0, 0);
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper oldClipper) {
-    return false;
   }
 }
