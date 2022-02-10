@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:contestalert/screens/homePageItems/livecontest.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lottie/lottie.dart';
 
 import '../constants.dart';
 
@@ -17,37 +18,49 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.only(left: 20, top: 50, right: 20),
+        padding: EdgeInsets.only(left: 0, top: 50, right: 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                InkWell(
-                    onTap: () {
-                      Navigator.pushNamed(context, "/allcontest");
-                    },
-                    child: SvgPicture.asset("assets/icons/menu.svg")),
-                Image.asset("assets/images/user.png"),
-              ],
-            ),
-            SizedBox(height: 30),
-            Text("Hey Tanay,", style: kHeadingextStyle),
-            Text("Let's explore what's happening nearby",
-                style: kSubheadingextStyle),
-            SizedBox(
-              height: 60,
-            ),
-            Row(
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text("Platforms", style: kTitleTextStyle),
-                  Text(
-                    "See All",
-                    style: kSubtitleTextSyle.copyWith(color: kBlueColor),
-                  ),
-                ]),
+                  InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, "/allcontest");
+                      },
+                      child: SvgPicture.asset("assets/icons/menu.svg")),
+                  Image.asset("assets/images/user.png"),
+                ],
+              ),
+            ),
+            SizedBox(height: 30),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: Text("Hey Tanay,", style: kHeadingextStyle),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: Text("Let's explore contest happening around",
+                  style: kSubheadingextStyle),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text("Platforms", style: kTitleTextStyle),
+                    Text(
+                      "See All",
+                      style: kSubtitleTextSyle.copyWith(color: kBlueColor),
+                    ),
+                  ]),
+            ),
             SizedBox(
               height: 20,
             ),
@@ -63,27 +76,52 @@ class _HomePageState extends State<HomePage> {
                 autoPlayInterval: Duration(seconds: 3),
                 autoPlayAnimationDuration: Duration(milliseconds: 800),
                 autoPlayCurve: Curves.fastOutSlowIn,
-                enlargeCenterPage: true,
+                enlargeCenterPage: false,
                 scrollDirection: Axis.horizontal,
               ),
-              itemCount: 15,
+              itemCount: contestName.length,
               itemBuilder:
                   (BuildContext context, int itemIndex, int pageViewIndex) =>
-                      Container(
-                height: 120,
-                width: 120,
-                color: kBlueColor,
-                child: Text(itemIndex.toString()),
+                      InkWell(
+                borderRadius: BorderRadius.circular(15.0),
+                splashColor: kBlueColor,
+                onTap: () {},
+                child: Container(
+                    decoration: BoxDecoration(
+                        color: kBlueColor.withOpacity(.05),
+                        border: Border.all(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(15.0)),
+                    height: 120,
+                    width: 120,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          pictureId[contestName[itemIndex]].toString(),
+                          height: 40,
+                          width: 40,
+                        ),
+                        Text(contestName[itemIndex],
+                            style: kSubheadingextStyle),
+                      ],
+                    )),
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 40,
             ),
-            Text("Live Contests", style: kTitleTextStyle),
-            SizedBox(
-              height: 5,
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child:
+                  Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+                Text("Live Contests", style: kTitleTextStyle),
+                SizedBox(
+                  width: 5,
+                ),
+                Lottie.asset(livePulseAnimation, height: 20)
+              ]),
             ),
-            Expanded(child: LiveContest()),
+            Expanded(flex: 1, child: LiveContest()),
           ],
         ),
       ),

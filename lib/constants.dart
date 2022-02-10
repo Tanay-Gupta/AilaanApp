@@ -33,7 +33,10 @@ const kSubtitleTextSyle = TextStyle(
   color: kTextColor,
   // fontWeight: FontWeight.bold,
 );
+//Animation links
 
+const String livePulseAnimation = 'assets/animations/livePulse.json';
+const String loadingAnimation = 'assets/animations/loading.json';
 var pictureId = {
   'CodeChef': 'assets/icons/codechef.svg',
   'AtCoder': 'assets/icons/atcoder.svg',
@@ -42,9 +45,18 @@ var pictureId = {
   'HackerRank': 'assets/icons/hackerrank.svg',
   'LeetCode': 'assets/icons/leetcode.svg',
   'Kick Start': 'assets/icons/google.svg',
-  'TopCoder': '',
+  'TopCoder': 'assets/icons/topcoder.svg',
   'CS Academy': 'assets/icons/csAcadmey.png'
 };
+List contestName = [
+  'CodeChef',
+  'CodeForces',
+  'HackerEarth',
+  'HackerRank',
+  'LeetCode',
+  'Kick Start',
+  'TopCoder',
+];
 
 const String listOfSupportedSitesUrl = 'https://kontests.net/api/v1/sites';
 

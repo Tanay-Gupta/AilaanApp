@@ -28,40 +28,43 @@ class _CodechefPageState extends State<CodechefPage> {
     int running = 0;
     return Scaffold(
         appBar: AppBar(),
-        body: Container(
-            color: Colors.white,
-            child: RefreshIndicator(
-              onRefresh: () async {
-                futurelist = APIManager().getDataAsList();
-              },
-              child: FutureBuilder<List>(
-                future: futurelist,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    return ListView.builder(
-                        physics: BouncingScrollPhysics(
-                            parent: AlwaysScrollableScrollPhysics()),
-                        itemCount: snapshot.data!.length,
-                        itemBuilder: (context, index) {
-                          // FOR RUNNING CONTEST USE 'CODING'
-                          // 'BEFORE' FOR UPCOMING CONTESTs
-
-                          String imgurl = snapshot.data![index].site;
-
-                          return ListContainer(
-                            imgUrl: pictureId[imgurl].toString(),
-                            number: (index + 1) < 10
-                                ? '0' + (index + 1).toString()
-                                : (index + 1).toString(),
-                            duration: 15.35,
-                            title: snapshot.data![index].name,
-                          );
-                        });
-                  } else {
-                    return Center(child: const CircularProgressIndicator());
-                  }
+        body: Padding(
+          padding: EdgeInsets.only(left: 20, top: 10, right: 20),
+          child: Container(
+              color: Colors.white,
+              child: RefreshIndicator(
+                onRefresh: () async {
+                  futurelist = APIManager().getDataAsList();
                 },
-              ),
-            )));
+                child: FutureBuilder<List>(
+                  future: futurelist,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return ListView.builder(
+                          physics: BouncingScrollPhysics(
+                              parent: AlwaysScrollableScrollPhysics()),
+                          itemCount: snapshot.data!.length,
+                          itemBuilder: (context, index) {
+                            // FOR RUNNING CONTEST USE 'CODING'
+                            // 'BEFORE' FOR UPCOMING CONTESTs
+
+                            String imgurl = snapshot.data![index].site;
+
+                            return ListContainer(
+                              imgUrl: pictureId[imgurl].toString(),
+                              number: (index + 1) < 10
+                                  ? '0' + (index + 1).toString()
+                                  : (index + 1).toString(),
+                              duration: 15.35,
+                              title: snapshot.data![index].name,
+                            );
+                          });
+                    } else {
+                      return Center(child: const CircularProgressIndicator());
+                    }
+                  },
+                ),
+              )),
+        ));
   }
 }
