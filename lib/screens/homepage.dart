@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:contestalert/screens/homePageItems/livecontest.dart';
+import 'package:contestalert/screens/showplatformcontest.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
@@ -91,7 +92,17 @@ class _HomePageState extends State<HomePage> {
                       InkWell(
                 borderRadius: BorderRadius.circular(15.0),
                 splashColor: kBlueColor,
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetailsScreen(
+                        contestUrl: contestNameWithUrl[contestName[itemIndex]]
+                            .toString(),
+                      ),
+                    ),
+                  );
+                },
                 child: Container(
                     decoration: BoxDecoration(
                         color: kBlueColor.withOpacity(.05),
@@ -108,13 +119,14 @@ class _HomePageState extends State<HomePage> {
                           width: 40,
                         ),
                         Text(contestName[itemIndex],
-                            style: kSubheadingextStyle),
+                            style: kSubheadingextStyle.copyWith(
+                                overflow: TextOverflow.visible)),
                       ],
                     )),
               ),
             ),
             SizedBox(
-              height: 40,
+              height: 55,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),

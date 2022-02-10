@@ -3,16 +3,16 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../constants.dart';
 
-class ListContainer extends StatelessWidget {
+class ContestDetailContainer extends StatelessWidget {
   final String number;
   final String? duration;
   final String? title;
   final bool isDone;
-  final String imgUrl;
-  const ListContainer({
+  //final String imgUrl;
+  const ContestDetailContainer({
     Key? key,
     required this.number,
-    required this.imgUrl,
+    //  required this.imgUrl,
     this.duration,
     this.title,
     this.isDone = false,
@@ -39,7 +39,7 @@ class ListContainer extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * .030,
               ),
               Container(
-                width: MediaQuery.of(context).size.width * .63,
+                width: MediaQuery.of(context).size.width * .7,
                 // color: Colors.red,
                 child: RichText(
                   overflow: TextOverflow.ellipsis,
@@ -65,13 +65,13 @@ class ListContainer extends StatelessWidget {
               ),
             ],
           ),
-          Container(
-            // color: Colors.blueAccent,
-            //margin: EdgeInsets.only(left: 2),
-            height: 40,
-            width: 40,
-            child: SvgPicture.asset(imgUrl),
-          )
+          // Container(
+          //   // color: Colors.blueAccent,
+          //   //margin: EdgeInsets.only(left: 2),
+          //   height: 40,
+          //   width: 40,
+          //   child: SvgPicture.asset(imgUrl),
+          // )
         ],
       ),
     );

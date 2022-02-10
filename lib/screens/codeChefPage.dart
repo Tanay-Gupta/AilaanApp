@@ -15,10 +15,11 @@ class CodechefPage extends StatefulWidget {
 
 class _CodechefPageState extends State<CodechefPage> {
   late Future<List> futurelist;
-
+  APIManager ob = new APIManager(false, codeChefUrl);
   @override
   void initState() {
-    futurelist = APIManager().getDataAsList();
+    APIManager ob = new APIManager(false, codeChefUrl);
+    futurelist = ob.getDataAsList();
 
     super.initState();
   }
@@ -34,7 +35,7 @@ class _CodechefPageState extends State<CodechefPage> {
               color: Colors.white,
               child: RefreshIndicator(
                 onRefresh: () async {
-                  futurelist = APIManager().getDataAsList();
+                  futurelist = ob.getDataAsList();
                 },
                 child: FutureBuilder<List>(
                   future: futurelist,

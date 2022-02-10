@@ -41,6 +41,7 @@ var pictureId = {
   'CodeChef': 'assets/icons/codechef.svg',
   'AtCoder': 'assets/icons/atcoder.svg',
   'CodeForces': 'assets/icons/codeforces.svg',
+  'CF::Gym': 'assets/icons/codeforces.svg',
   'HackerEarth': 'assets/icons/hackerearth.svg',
   'HackerRank': 'assets/icons/hackerrank.svg',
   'LeetCode': 'assets/icons/leetcode.svg',
@@ -52,11 +53,22 @@ List contestName = [
   'CodeChef',
   'CodeForces',
   'HackerEarth',
+  'CF::Gym',
   'HackerRank',
   'LeetCode',
   'Kick Start',
   'TopCoder',
 ];
+var contestNameWithUrl = {
+  'CodeChef': codeChefUrl,
+  'CodeForces': codeForcesUrl,
+  'HackerEarth': hackerEarthUrl,
+  'CF::Gym': codeForcesGymUrl,
+  'HackerRank': hackerRankUrl,
+  'LeetCode': leetCodeUrl,
+  'Kick Start': kickStartUrl,
+  'TopCoder': topCoderUrl,
+};
 
 const String listOfSupportedSitesUrl = 'https://kontests.net/api/v1/sites';
 
