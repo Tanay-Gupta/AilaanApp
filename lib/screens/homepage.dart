@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       //backgroundColor: Colors.white,
       body: Padding(
-        padding: EdgeInsets.only(left: 0, top: 50, right: 0),
+        padding: const EdgeInsets.only(left: 0, top: 50, right: 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -96,7 +96,8 @@ class _HomePageState extends State<HomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => DetailsScreen(
+                      builder: (context) => ContestDetailsScreen(
+                        contestName: contestName[itemIndex],
                         contestUrl: contestNameWithUrl[contestName[itemIndex]]
                             .toString(),
                       ),

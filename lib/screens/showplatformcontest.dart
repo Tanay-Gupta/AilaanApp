@@ -4,10 +4,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../constants.dart';
 
-class DetailsScreen extends StatelessWidget {
+class ContestDetailsScreen extends StatelessWidget {
   final String contestUrl;
+  final String contestName;
 
-  const DetailsScreen({Key? key, required this.contestUrl}) : super(key: key);
+  const ContestDetailsScreen(
+      {Key? key, required this.contestUrl, required this.contestName})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,23 +48,23 @@ class DetailsScreen extends StatelessWidget {
                       SvgPicture.asset("assets/icons/more-vertical.svg"),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   ClipPath(
                     clipper: BestSellerClipper(),
                     child: Container(
                       color: kBestSellerColor,
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                           left: 10, top: 5, right: 20, bottom: 5),
                       child: Text(
                         "BestSeller".toUpperCase(),
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                     ),
                   ),
                   SizedBox(height: 16),
-                  Text("Design Thinking", style: kHeadingextStyle),
+                  Text(contestName, style: kHeadingextStyle),
                   SizedBox(height: 16),
                   Row(
                     children: <Widget>[

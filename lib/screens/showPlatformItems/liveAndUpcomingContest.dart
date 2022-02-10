@@ -1,6 +1,5 @@
 import 'package:contestalert/constants.dart';
 import 'package:contestalert/screens/showPlatformItems/contestDetailContainer.dart';
-import 'package:contestalert/screens/widgets/listcontainer.dart';
 import 'package:contestalert/services/api_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -61,9 +60,11 @@ class _LiveAndUpcomingContestState extends State<LiveAndUpcomingContest> {
                       number: (index + 1) < 10
                           ? '0' + (index + 1).toString()
                           : (index + 1).toString(),
-                      duration: DurationExtract(snapshot.data![index].endTime
-                          .toString()
-                          .substring(0, 10)),
+                      // duration: DurationExtract(snapshot.data![index].endTime
+                      //     .toString()
+                      //     .substring(0, 10)),
+                      duration: snapshot.data![index].endTime.toString(),
+
                       title: snapshot.data![index].name,
                     );
                     // } else {

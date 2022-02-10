@@ -1,4 +1,3 @@
-import 'package:contestalert/screens/codeChefPage.dart';
 import 'package:contestalert/screens/homepage.dart';
 import 'package:contestalert/screens/showplatformcontest.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
       //  home: HomePage(),
       routes: {
         '/': (context) => HomePage(),
-        '/allcontest': (context) => CodechefPage()
+        //  '/allcontest': (context) => CodechefPage()
       },
     );
   }
