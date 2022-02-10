@@ -5,7 +5,7 @@ import '../../constants.dart';
 
 class ListContainer extends StatelessWidget {
   final String number;
-  final double? duration;
+  final String? duration;
   final String? title;
   final bool isDone;
   final String imgUrl;
@@ -46,10 +46,10 @@ class ListContainer extends StatelessWidget {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        text: "$duration mins\n",
+                        text: "ends $duration\n",
                         style: TextStyle(
                           color: kTextColor.withOpacity(.5),
-                          fontSize: 18,
+                          fontSize: 17.5,
                         ),
                       ),
                       TextSpan(

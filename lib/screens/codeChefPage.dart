@@ -55,7 +55,7 @@ class _CodechefPageState extends State<CodechefPage> {
                               number: (index + 1) < 10
                                   ? '0' + (index + 1).toString()
                                   : (index + 1).toString(),
-                              duration: 15.35,
+                              duration: "15.35",
                               title: snapshot.data![index].name,
                             );
                           });

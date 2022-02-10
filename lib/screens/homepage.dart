@@ -17,6 +17,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.only(left: 0, top: 50, right: 0),
         child: Column(
@@ -55,9 +56,14 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text("Platforms", style: kTitleTextStyle),
-                    Text(
-                      "See All",
-                      style: kSubtitleTextSyle.copyWith(color: kBlueColor),
+                    GestureDetector(
+                      onTap: () {
+                        print("hi");
+                      },
+                      child: Text(
+                        "See All",
+                        style: kSubtitleTextSyle.copyWith(color: kBlueColor),
+                      ),
                     ),
                   ]),
             ),

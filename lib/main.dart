@@ -1,8 +1,11 @@
 import 'package:contestalert/screens/codeChefPage.dart';
 import 'package:contestalert/screens/homepage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(systemNavigationBarColor: Colors.white));
   runApp(const MyApp());
 }
 

@@ -21,6 +21,14 @@ class _LiveContestState extends State<LiveContest> {
     super.initState();
   }
 
+  String DurationExtract(String start) {
+    return (start.substring(8, 10) +
+        "-" +
+        start.substring(5, 7) +
+        "-" +
+        start.substring(0, 4));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -49,7 +57,9 @@ class _LiveContestState extends State<LiveContest> {
                         number: (index + 1) < 10
                             ? '0' + (index + 1).toString()
                             : (index + 1).toString(),
-                        duration: 15.35,
+                        duration: DurationExtract(snapshot.data![index].endTime
+                            .toString()
+                            .substring(0, 10)),
                         title: snapshot.data![index].name,
                       );
                     } else {
