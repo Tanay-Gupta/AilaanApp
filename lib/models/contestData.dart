@@ -26,6 +26,7 @@ class ContestData {
   String? startTime;
   String? endTime;
   String? duration;
+
   String? in24Hours;
   String? status;
 
@@ -35,6 +36,7 @@ class ContestData {
         startTime: json["start_time"],
         endTime: json["end_time"],
         duration: json["duration"],
+        // type: json["type_"],
         in24Hours: json["in_24_hours"],
         status: json["status"],
       );
@@ -45,6 +47,7 @@ class ContestData {
         "start_time": startTime,
         "end_time": endTime,
         "duration": duration,
+        // "type_": type,
         "in_24_hours": in24Hours,
         "status": status,
       };

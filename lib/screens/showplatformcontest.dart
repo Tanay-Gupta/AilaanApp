@@ -69,7 +69,7 @@ class ContestDetailsScreen extends StatelessWidget {
                       style: kHeadingextStyle.copyWith(fontSize: 35)),
                   const SizedBox(height: 16),
                   Text(contestSiteUrl),
-                  const SizedBox(height: 80),
+                  const SizedBox(height: 60),
                 ],
               ),
             ),
@@ -85,12 +85,12 @@ class ContestDetailsScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+                  padding: const EdgeInsets.fromLTRB(25, 30, 20, 0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text("Contest details", style: kTitleTextStyle),
-                      SizedBox(height: 15),
+                      SizedBox(height: 5),
                       Expanded(
                           child: LiveAndUpcomingContest(
                         contestUrl: contestUrl,

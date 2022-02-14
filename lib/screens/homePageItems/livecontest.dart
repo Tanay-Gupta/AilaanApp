@@ -1,5 +1,5 @@
 import 'package:contestalert/constants.dart';
-import 'package:contestalert/screens/widgets/listcontainer.dart';
+import 'package:contestalert/screens/homePageItems/listcontainer.dart';
 import 'package:contestalert/services/api_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -53,11 +53,20 @@ class _LiveContestState extends State<LiveContest> {
                       String imgurl = snapshot.data![index].site;
 
                       return ListContainer(
+                        contestUrl: snapshot.data![index].url,
                         imgUrl: pictureId[imgurl].toString(),
                         number: (index + 1) < 10
                             ? '0' + (index + 1).toString()
                             : (index + 1).toString(),
                         duration: DurationExtract(snapshot.data![index].endTime
+                            .toString()
+                            .substring(0, 10)),
+                        durationInHr: snapshot.data![index].duration,
+                        startTime: DurationExtract(snapshot
+                            .data![index].startTime
+                            .toString()
+                            .substring(0, 10)),
+                        endTime: DurationExtract(snapshot.data![index].endTime
                             .toString()
                             .substring(0, 10)),
                         title: snapshot.data![index].name,

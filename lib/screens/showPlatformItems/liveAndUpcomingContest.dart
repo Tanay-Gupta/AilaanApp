@@ -53,23 +53,27 @@ class _LiveAndUpcomingContestState extends State<LiveAndUpcomingContest> {
                     // 'BEFORE' FOR UPCOMING CONTESTs
 
                     // if (snapshot.data![index].status == 'CODING') {
-                    // String imgurl = snapshot.data![index].site;
+                    //
 
                     return ContestDetailContainer(
-                      //   imgUrl: pictureId[imgurl].toString(),
+                      startTime: snapshot.data![index].startTime,
+                      endTime: snapshot.data![index].endTime,
+                      durationInHr: snapshot.data![index].duration,
                       number: (index + 1) < 10
                           ? '0' + (index + 1).toString()
                           : (index + 1).toString(),
-                      duration: DurationExtract(snapshot.data![index].endTime
-                          .toString()
-                          .substring(0, 10)),
-                      //   duration: snapshot.data![index].endTime.toString(),
-
+                      duration: DurationExtract(snapshot.data![index].startTime
+                              .toString()
+                              .substring(0, 10)) +
+                          ' to ' +
+                          DurationExtract(snapshot.data![index].endTime
+                              .toString()
+                              .substring(0, 10)),
+                      isLive: snapshot.data![index].status == 'CODING'
+                          ? true
+                          : false,
                       title: snapshot.data![index].name,
                     );
-                    // } else {
-                    //   return (const SizedBox());
-                    // }
                   });
             } else {
               return Center(
