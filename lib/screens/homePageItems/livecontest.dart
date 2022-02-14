@@ -58,17 +58,10 @@ class _LiveContestState extends State<LiveContest> {
                         number: (index + 1) < 10
                             ? '0' + (index + 1).toString()
                             : (index + 1).toString(),
-                        duration: DurationExtract(snapshot.data![index].endTime
-                            .toString()
-                            .substring(0, 10)),
-                        durationInHr: snapshot.data![index].duration,
-                        startTime: DurationExtract(snapshot
-                            .data![index].startTime
-                            .toString()
-                            .substring(0, 10)),
-                        endTime: DurationExtract(snapshot.data![index].endTime
-                            .toString()
-                            .substring(0, 10)),
+                        duration: snapshot.data![index].endTime,
+                        durationInHr: snapshot.data![index].duration.toString(),
+                        startTime: snapshot.data![index].startTime,
+                        endTime: snapshot.data![index].endTime,
                         title: snapshot.data![index].name,
                       );
                     } else {

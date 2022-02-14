@@ -42,8 +42,12 @@ class ContestDetailContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     String starttime = utcToLocal(startTime);
     String endtime = utcToLocal(endTime);
-    String durationInhour =
-        Duration(seconds: int.parse(durationInHr)).inHours.toString();
+    String durationInhour = Duration(
+            seconds: int.parse(durationInHr.indexOf('.') != -1
+                ? durationInHr.substring(0, durationInHr.indexOf('.') - 1)
+                : durationInHr))
+        .inHours
+        .toString();
 
     return Material(
       color: Colors.white,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:intl/intl.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../constants.dart';
@@ -27,8 +28,26 @@ class ListContainer extends StatelessWidget {
     this.isDone = false,
   }) : super(key: key);
 
+  String utcToLocal(String utc) {
+    utc = utc.substring(0, 10) + "T" + utc.substring(11, 19) + ".000Z";
+
+    var strToDateTime = DateTime.parse(utc);
+    final convertLocal = strToDateTime.toLocal();
+    var newFormat = DateFormat("dd-MM-yyyy hh:mm aaa");
+    String updatedDt = newFormat.format(convertLocal);
+    return (updatedDt);
+  }
+
   @override
   Widget build(BuildContext context) {
+    String starttime = utcToLocal(startTime);
+    String endtime = utcToLocal(endTime);
+    String durationInhour = Duration(
+            seconds: int.parse(durationInHr.indexOf('.') != -1
+                ? durationInHr.substring(0, durationInHr.indexOf('.') - 1)
+                : durationInHr))
+        .inHours
+        .toString();
     return Padding(
       padding: const EdgeInsets.only(bottom: 30),
       child: InkWell(
@@ -47,7 +66,7 @@ class ListContainer extends StatelessWidget {
                     height: 20,
                   ),
                   Text(
-                    "Start: $startTime\n\nEnd: $endTime\n\nTime: $durationInHr Hr",
+                    "Start: $starttime\n\nEnd: $endtime\n\nTime: $durationInhour Hr",
                     style: kSubtitleTextSyle.copyWith(fontSize: 17),
                   ),
                 ],
@@ -84,28 +103,6 @@ class ListContainer extends StatelessWidget {
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width * .63,
-                  // color: Colors.red,
-                  // child: RichText(
-                  //   overflow: TextOverflow.ellipsis,
-                  //   text: TextSpan(
-                  //     children: [
-                  //       TextSpan(
-                  //         text: "ends $duration\n",
-                  //         style: TextStyle(
-                  //           color: kTextColor.withOpacity(.5),
-                  //           fontSize: 17.5,
-                  //         ),
-                  //       ),
-                  //       TextSpan(
-                  //         text: title,
-                  //         style: kSubtitleTextSyle.copyWith(
-                  //           fontWeight: FontWeight.w600,
-                  //           height: 1.5,
-                  //         ),
-                  //       ),
-                  //     ],
-                  //   ),
-                  // ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -122,7 +119,7 @@ class ListContainer extends StatelessWidget {
                         height: 2,
                       ),
                       Text(
-                        "ends on $duration",
+                        "ends on $endtime",
                         style: TextStyle(
                             color: kTextColor.withOpacity(.5),
                             //fontSize: 13.5,
