@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_web_browser/flutter_web_browser.dart';
 import 'package:lottie/lottie.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import '../../constants.dart';
@@ -14,11 +15,13 @@ class ContestDetailContainer extends StatelessWidget {
   final String startTime;
   final String endTime;
   final String durationInHr;
+  final String contestUrl;
 
   // final String imgUrl;
   const ContestDetailContainer({
     Key? key,
     required this.number,
+    required this.contestUrl,
     required this.durationInHr,
     required this.startTime,
     required this.endTime,
@@ -78,7 +81,22 @@ class ContestDetailContainer extends StatelessWidget {
                 buttons: [
                   DialogButton(
                     color: kBlueColor,
-                    onPressed: () => Navigator.pop(context),
+                    onPressed: isLive
+                        ? () async {
+                            FlutterWebBrowser.openWebPage(
+                                url: contestUrl,
+                                customTabsOptions: const CustomTabsOptions(
+                                  colorScheme: CustomTabsColorScheme.dark,
+                                  shareState: CustomTabsShareState.on,
+                                  instantAppsEnabled: true,
+                                  showTitle: true,
+                                  urlBarHidingEnabled: true,
+                                ));
+
+                            // if (!await launch(contestUrl))
+                            //   throw 'Could not launch $contestUrl';
+                          }
+                        : () => Navigator.pop(context),
                     child: Text(
                       isLive == false ? 'Set Remainder' : 'Open site',
                       style: TextStyle(color: Colors.white, fontSize: 20),

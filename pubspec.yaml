@@ -42,6 +42,7 @@ dependencies:
   rflutter_alert: ^2.0.4
   url_launcher: ^6.0.19
   intl: ^0.17.0
+  flutter_web_browser: ^0.16.0
 
 dev_dependencies:
   flutter_test:

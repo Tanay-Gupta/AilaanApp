@@ -49,13 +49,8 @@ class _LiveAndUpcomingContestState extends State<LiveAndUpcomingContest> {
                       parent: AlwaysScrollableScrollPhysics()),
                   itemCount: snapshot.data!.length,
                   itemBuilder: (context, index) {
-                    // FOR RUNNING CONTEST USE 'CODING'
-                    // 'BEFORE' FOR UPCOMING CONTESTs
-
-                    // if (snapshot.data![index].status == 'CODING') {
-                    //
-
                     return ContestDetailContainer(
+                      contestUrl: snapshot.data![index].url.toString(),
                       startTime: snapshot.data![index].startTime,
                       endTime: snapshot.data![index].endTime,
                       durationInHr: snapshot.data![index].duration,

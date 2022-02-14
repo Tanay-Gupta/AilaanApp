@@ -4,7 +4,7 @@ import 'package:contestalert/screens/showplatformcontest.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
-
+import 'package:flutter_web_browser/flutter_web_browser.dart';
 import '../constants.dart';
 
 class HomePage extends StatefulWidget {

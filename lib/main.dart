@@ -1,11 +1,14 @@
 import 'package:contestalert/screens/homepage.dart';
 import 'package:contestalert/screens/showplatformcontest.dart';
+
 import 'package:flutter/material.dart';
+
 import 'package:flutter/services.dart';
 
-void main() {
+void main() async {
   SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(systemNavigationBarColor: Colors.white));
+
   runApp(const MyApp());
 }
 
@@ -19,10 +22,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Contest Alert',
       theme: ThemeData(),
-      //  home: HomePage(),
+      // home: HomePage(),
       routes: {
         '/': (context) => HomePage(),
         //  '/allcontest': (context) => CodechefPage()
+        // '/browser': (context) => InAppBro(),
       },
     );
   }

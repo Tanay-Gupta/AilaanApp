@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../constants.dart';
+import 'package:flutter_web_browser/flutter_web_browser.dart';
 
 class ListContainer extends StatelessWidget {
   final String number;
@@ -75,8 +76,19 @@ class ListContainer extends StatelessWidget {
                 DialogButton(
                   color: kBlueColor,
                   onPressed: () async {
-                    if (!await launch(contestUrl))
-                      throw 'Could not launch $contestUrl';
+                    FlutterWebBrowser.openWebPage(
+                      url: contestUrl,
+                      customTabsOptions: const CustomTabsOptions(
+                        colorScheme: CustomTabsColorScheme.dark,
+                        shareState: CustomTabsShareState.on,
+                        instantAppsEnabled: true,
+                        showTitle: true,
+                        urlBarHidingEnabled: true,
+                      ),
+                    );
+
+                    // if (!await launch(contestUrl))
+                    //   throw 'Could not launch $contestUrl';
                   },
                   child: Text(
                     'Open site',
