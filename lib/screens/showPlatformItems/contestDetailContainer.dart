@@ -123,7 +123,7 @@ class ContestDetailContainer extends StatelessWidget {
                   Container(
                     width: MediaQuery.of(context).size.width *
                         (isLive == true ? 0.63 : 0.72),
-                    //  color: Colors.red,
+                    //color: Colors.red,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

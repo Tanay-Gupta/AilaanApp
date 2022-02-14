@@ -114,6 +114,7 @@ class ListContainer extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * .030,
                 ),
                 Container(
+                  //s color: Colors.red,
                   width: MediaQuery.of(context).size.width * .63,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
