@@ -69,7 +69,14 @@ class ContestDetailsScreen extends StatelessWidget {
                       style: kHeadingextStyle.copyWith(fontSize: 35)),
                   const SizedBox(height: 16),
                   Text(contestSiteUrl),
-                  const SizedBox(height: 60),
+                  const SizedBox(height: 10),
+                  Text("Today's Date: " +
+                      DateTime.now().day.toString() +
+                      "-" +
+                      DateTime.now().month.toString() +
+                      "-" +
+                      DateTime.now().year.toString()),
+                  const SizedBox(height: 48),
                 ],
               ),
             ),

@@ -21,21 +21,16 @@ class _LiveContestState extends State<LiveContest> {
     super.initState();
   }
 
-  String DurationExtract(String start) {
-    return (start.substring(8, 10) +
-        "-" +
-        start.substring(5, 7) +
-        "-" +
-        start.substring(0, 4));
-  }
-
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20),
       child: RefreshIndicator(
         onRefresh: () async {
+          ob = new APIManager(true, allContestUrl);
+
           futurelist = ob.getDataAsList();
+          setState(() {});
         },
         child: FutureBuilder<List>(
           future: futurelist,

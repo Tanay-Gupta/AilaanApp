@@ -9,6 +9,14 @@ class APIManager {
   final bool allContest;
   final String ContestUrl;
 
+  String dateSub(String utc) {
+    utc = utc.substring(0, 10) + "T" + utc.substring(11, 19) + ".000Z";
+
+    var strToDateTime = DateTime.parse(utc);
+    final convertLocal = strToDateTime.toLocal();
+    return (convertLocal.toString());
+  }
+
   APIManager(this.allContest, this.ContestUrl);
   Future<List> getDataAsList() async {
     var client = http.Client();
@@ -28,6 +36,11 @@ class APIManager {
           contestDataAsList =
               jsonMap.map((model) => ContestData.fromJson(model)).toList();
         }
+
+        //print(contestDataAsList[0].endTime);
+        contestDataAsList.sort((a, b) {
+          return dateSub(a.startTime).compareTo(dateSub(b.startTime));
+        });
 
         return contestDataAsList;
       }

@@ -15,9 +15,12 @@ class LiveAndUpcomingContest extends StatefulWidget {
 
 class _LiveAndUpcomingContestState extends State<LiveAndUpcomingContest> {
   late Future<List> futurelist;
+  APIManager? ob;
+  String contestUrl = '';
 
   @override
   void initState() {
+    contestUrl = widget.contestUrl;
     APIManager ob = new APIManager(false, widget.contestUrl);
     futurelist = ob.getDataAsList();
 
@@ -36,8 +39,10 @@ class _LiveAndUpcomingContestState extends State<LiveAndUpcomingContest> {
   Widget build(BuildContext context) {
     return RefreshIndicator(
       onRefresh: () async {
-        //ob = new APIManager(false, codeChefUrl);
-        // futurelist = ob.getDataAsList();
+        setState(() {
+          ob = new APIManager(false, widget.contestUrl);
+          futurelist = ob!.getDataAsList();
+        });
       },
       child: FutureBuilder<List>(
         future: futurelist,

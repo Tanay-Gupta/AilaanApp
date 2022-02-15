@@ -19,6 +19,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       //backgroundColor: Colors.white,
+      //  backgroundColor: Color(0xFFF5F4EF),
       body: Padding(
         padding: const EdgeInsets.only(left: 0, top: 50, right: 0),
         child: Column(
@@ -75,68 +76,87 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 20,
             ),
-            CarouselSlider.builder(
-              options: CarouselOptions(
-                height: 120,
-                aspectRatio: 16 / 9,
-                viewportFraction: 0.4,
-                initialPage: 0,
-                enableInfiniteScroll: true,
-                reverse: false,
-                autoPlay: true,
-                autoPlayInterval: Duration(seconds: 3),
-                autoPlayAnimationDuration: Duration(milliseconds: 800),
-                autoPlayCurve: Curves.fastOutSlowIn,
-                enlargeCenterPage: false,
-                scrollDirection: Axis.horizontal,
-              ),
-              itemCount: contestName.length,
-              itemBuilder:
-                  (BuildContext context, int itemIndex, int pageViewIndex) =>
-                      InkWell(
-                borderRadius: BorderRadius.circular(15.0),
-                splashColor: kBlueColor,
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ContestDetailsScreen(
-                        contestSiteUrl:
-                            ContestWebsiteUrl[contestName[itemIndex]]
-                                .toString(),
-                        contestImageUrl:
-                            pictureId[contestName[itemIndex]].toString(),
-                        contestName: contestName[itemIndex],
-                        contestUrl: contestNameWithUrl[contestName[itemIndex]]
-                            .toString(),
-                      ),
-                    ),
-                  );
-                },
-                child: Container(
-                    decoration: BoxDecoration(
-                        color: kBlueColor.withOpacity(.05),
-                        border: Border.all(color: Colors.grey),
-                        borderRadius: BorderRadius.circular(15.0)),
-                    height: 120,
-                    width: 120,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SvgPicture.asset(
-                          pictureId[contestName[itemIndex]].toString(),
-                          height: 40,
-                          width: 40,
+            Container(
+              width: double.infinity,
+              height: 160,
+              child: CarouselSlider.builder(
+                options: CarouselOptions(
+                  height: 120,
+                  aspectRatio: 16 / 9,
+                  disableCenter: false,
+                  viewportFraction: 0.4,
+                  initialPage: 0,
+                  enableInfiniteScroll: true,
+                  reverse: false,
+                  autoPlay: true,
+                  autoPlayInterval: Duration(seconds: 2),
+                  autoPlayAnimationDuration: Duration(milliseconds: 800),
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  enlargeCenterPage: true,
+                  scrollDirection: Axis.horizontal,
+                ),
+                itemCount: contestName.length,
+                itemBuilder:
+                    (BuildContext context, int itemIndex, int pageViewIndex) =>
+                        InkWell(
+                  borderRadius: BorderRadius.circular(15.0),
+                  // co
+                  splashColor: kBlueColor,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ContestDetailsScreen(
+                          contestSiteUrl:
+                              ContestWebsiteUrl[contestName[itemIndex]]
+                                  .toString(),
+                          contestImageUrl:
+                              pictureId[contestName[itemIndex]].toString(),
+                          contestName: contestName[itemIndex],
+                          contestUrl: contestNameWithUrl[contestName[itemIndex]]
+                              .toString(),
                         ),
-                        Text(contestName[itemIndex],
-                            style: kSubheadingextStyle.copyWith(
-                                overflow: TextOverflow.visible)),
-                      ],
-                    )),
+                      ),
+                    );
+                  },
+                  child: Container(
+                      decoration: BoxDecoration(
+                          // color: kBlueColor.withOpacity(.2),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.grey.shade300,
+                                offset: Offset(4.0, 4.0),
+                                blurRadius: 12.0,
+                                spreadRadius: 1.0),
+                            BoxShadow(
+                                color: Colors.white,
+                                offset: Offset(-4.0, -4.0),
+                                blurRadius: 12.0,
+                                spreadRadius: 1.0),
+                          ],
+                          //border: Border.all(color: Colors.grey),
+                          borderRadius: BorderRadius.circular(15.0)),
+                      height: 120,
+                      width: 120,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SvgPicture.asset(
+                            pictureId[contestName[itemIndex]].toString(),
+                            height: 40,
+                            width: 40,
+                          ),
+                          Text(contestName[itemIndex],
+                              style: kSubheadingextStyle.copyWith(
+                                  overflow: TextOverflow.visible)),
+                        ],
+                      )),
+                ),
               ),
             ),
             SizedBox(
-              height: 55,
+              height: 20,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),

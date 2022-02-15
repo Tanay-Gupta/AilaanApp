@@ -1,3 +1,4 @@
+import 'package:contestalert/services/notification_api.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -31,11 +32,20 @@ class ContestDetailContainer extends StatelessWidget {
     this.isLive = false,
   }) : super(key: key);
 
+  DateTime dateSub(String utc) {
+    utc = utc.substring(0, 10) + "T" + utc.substring(11, 19) + ".000Z";
+
+    var strToDateTime = DateTime.parse(utc);
+    final convertLocal = strToDateTime.toLocal();
+    return (convertLocal);
+  }
+
   String utcToLocal(String utc) {
     utc = utc.substring(0, 10) + "T" + utc.substring(11, 19) + ".000Z";
 
     var strToDateTime = DateTime.parse(utc);
     final convertLocal = strToDateTime.toLocal();
+
     var newFormat = DateFormat("dd-MM-yyyy hh:mm aaa");
     String updatedDt = newFormat.format(convertLocal);
     return (updatedDt);
@@ -96,9 +106,35 @@ class ContestDetailContainer extends StatelessWidget {
                             // if (!await launch(contestUrl))
                             //   throw 'Could not launch $contestUrl';
                           }
-                        : () => Navigator.pop(context),
+                        : () {
+                            // String body = ;
+                            NotificationApi.showScheduledNotification(
+                                id: title.hashCode,
+                                title: "Hey Coder! 👋",
+                                body: title! + " will start in 24 hour",
+                                schedule: dateSub(startTime)
+                                    .subtract(Duration(hours: 24)),
+                                payload: 'tanay.abs');
+                            NotificationApi.showScheduledNotification(
+                                id: (title! + startTime).hashCode,
+                                title: "Hey Coder! 👋",
+                                body: title! + " will start in 1 hour",
+                                schedule: dateSub(startTime)
+                                    .subtract(Duration(hours: 1)),
+                                payload: 'tanay.abs');
+                            NotificationApi.showScheduledNotification(
+                                id: (title! + endTime).hashCode,
+                                title: "Hey Coder! 👋",
+                                body:
+                                    "$title will start in 5 min. All the Best 🤗",
+                                schedule: dateSub(startTime)
+                                    .subtract(Duration(minutes: 5)),
+                                payload: 'tanay.abs');
+
+                            Navigator.pop(context);
+                          },
                     child: Text(
-                      isLive == false ? 'Set Remainder' : 'Open site',
+                      isLive == false ? 'Set Reminder' : 'Open site',
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   )
