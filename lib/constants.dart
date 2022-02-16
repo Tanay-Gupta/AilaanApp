@@ -60,7 +60,7 @@ List contestName = [
   'TopCoder',
   'AtCoder'
 ];
-var ContestWebsiteUrl = {
+var contestWebsiteUrl = {
   'CodeChef': 'www.codechef.com',
   'CodeForces': 'www.codeforces.com',
   'HackerEarth': 'www.hackerearth.com',

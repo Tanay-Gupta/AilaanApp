@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:contestalert/constants.dart';
 import 'package:contestalert/screens/showPlatformItems/contestDetailContainer.dart';
 import 'package:contestalert/services/api_manager.dart';
@@ -21,12 +22,13 @@ class _LiveAndUpcomingContestState extends State<LiveAndUpcomingContest> {
   @override
   void initState() {
     contestUrl = widget.contestUrl;
-    APIManager ob = new APIManager(false, widget.contestUrl);
+    APIManager ob = APIManager(false, widget.contestUrl);
     futurelist = ob.getDataAsList();
 
     super.initState();
   }
 
+  // ignore: non_constant_identifier_names
   String DurationExtract(String start) {
     return (start.substring(8, 10) +
         "-" +
@@ -40,7 +42,7 @@ class _LiveAndUpcomingContestState extends State<LiveAndUpcomingContest> {
     return RefreshIndicator(
       onRefresh: () async {
         setState(() {
-          ob = new APIManager(false, widget.contestUrl);
+          ob = APIManager(false, widget.contestUrl);
           futurelist = ob!.getDataAsList();
         });
       },
@@ -48,9 +50,9 @@ class _LiveAndUpcomingContestState extends State<LiveAndUpcomingContest> {
         future: futurelist,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            if (snapshot.data!.length > 0) {
+            if (snapshot.data!.isNotEmpty) {
               return ListView.builder(
-                  physics: BouncingScrollPhysics(
+                  physics: const BouncingScrollPhysics(
                       parent: AlwaysScrollableScrollPhysics()),
                   itemCount: snapshot.data!.length,
                   itemBuilder: (context, index) {

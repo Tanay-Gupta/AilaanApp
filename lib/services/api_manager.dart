@@ -1,4 +1,3 @@
-import 'package:contestalert/constants.dart';
 import 'package:contestalert/models/allcontestData.dart';
 import 'package:contestalert/models/contestData.dart';
 
@@ -7,7 +6,7 @@ import 'dart:convert';
 
 class APIManager {
   final bool allContest;
-  final String ContestUrl;
+  final String contestUrl;
 
   String dateSub(String utc) {
     utc = utc.substring(0, 10) + "T" + utc.substring(11, 19) + ".000Z";
@@ -17,14 +16,14 @@ class APIManager {
     return (convertLocal.toString());
   }
 
-  APIManager(this.allContest, this.ContestUrl);
+  APIManager(this.allContest, this.contestUrl);
   Future<List> getDataAsList() async {
     var client = http.Client();
 
     List contestDataAsList = [];
 
     try {
-      var response = await client.get(Uri.parse(ContestUrl));
+      var response = await client.get(Uri.parse(contestUrl));
 
       if (response.statusCode == 200) {
         var jsonString = response.body;
@@ -44,8 +43,8 @@ class APIManager {
 
         return contestDataAsList;
       }
-    } catch (Exception) {
-      print(Exception.toString());
+    } catch (e) {
+      //print(e.toString());
     }
 
     return contestDataAsList;

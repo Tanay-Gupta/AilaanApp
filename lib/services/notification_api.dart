@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class NotificationApi {
@@ -40,6 +39,7 @@ class NotificationApi {
     String? payload,
     var schedule,
   }) async {
+    // ignore: deprecated_member_use
     _notifiations.schedule(
         id, title, body, schedule, await _notificationDetails());
   }

@@ -2,6 +2,8 @@
 //
 //     final allContestData = allContestDataFromJson(jsonString);
 
+// ignore_for_file: file_names
+
 import 'dart:convert';
 
 List<AllContestData> allContestDataFromJson(String str) =>

@@ -4,7 +4,6 @@ import 'package:contestalert/screens/showplatformcontest.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
-import 'package:flutter_web_browser/flutter_web_browser.dart';
 import '../constants.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Colors.white,
+      //backgroundColor: Colors.black,
       //  backgroundColor: Color(0xFFF5F4EF),
       body: Padding(
         padding: const EdgeInsets.only(left: 0, top: 50, right: 0),
@@ -43,17 +42,17 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 30),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
+            const SizedBox(height: 30),
+            const Padding(
+              padding: EdgeInsets.only(left: 20, right: 20),
               child: Text("Hey Tanay,", style: kHeadingextStyle),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
+            const Padding(
+              padding: EdgeInsets.only(left: 20, right: 20),
               child: Text("Let's explore contest happening around",
                   style: kSubheadingextStyle),
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Padding(
@@ -61,10 +60,10 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text("Platforms", style: kTitleTextStyle),
+                    const Text("Platforms", style: kTitleTextStyle),
                     GestureDetector(
                       onTap: () {
-                        print("hi");
+                        Navigator.pushNamed(context, '/allcontest');
                       },
                       child: Text(
                         "See All",
@@ -73,10 +72,10 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ]),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Container(
+            SizedBox(
               width: double.infinity,
               height: 160,
               child: CarouselSlider.builder(
@@ -89,8 +88,8 @@ class _HomePageState extends State<HomePage> {
                   enableInfiniteScroll: true,
                   reverse: false,
                   autoPlay: true,
-                  autoPlayInterval: Duration(seconds: 2),
-                  autoPlayAnimationDuration: Duration(milliseconds: 800),
+                  autoPlayInterval: const Duration(seconds: 2),
+                  autoPlayAnimationDuration: const Duration(milliseconds: 800),
                   autoPlayCurve: Curves.fastOutSlowIn,
                   enlargeCenterPage: true,
                   scrollDirection: Axis.horizontal,
@@ -108,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                       MaterialPageRoute(
                         builder: (context) => ContestDetailsScreen(
                           contestSiteUrl:
-                              ContestWebsiteUrl[contestName[itemIndex]]
+                              contestWebsiteUrl[contestName[itemIndex]]
                                   .toString(),
                           contestImageUrl:
                               pictureId[contestName[itemIndex]].toString(),
@@ -126,10 +125,10 @@ class _HomePageState extends State<HomePage> {
                           boxShadow: [
                             BoxShadow(
                                 color: Colors.grey.shade300,
-                                offset: Offset(4.0, 4.0),
+                                offset: const Offset(4.0, 4.0),
                                 blurRadius: 12.0,
                                 spreadRadius: 1.0),
-                            BoxShadow(
+                            const BoxShadow(
                                 color: Colors.white,
                                 offset: Offset(-4.0, -4.0),
                                 blurRadius: 12.0,
@@ -155,21 +154,21 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
               child:
                   Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-                Text("Live Contests", style: kTitleTextStyle),
-                SizedBox(
+                const Text("Live Contests", style: kTitleTextStyle),
+                const SizedBox(
                   width: 5,
                 ),
                 Lottie.asset(livePulseAnimation, height: 20)
               ]),
             ),
-            Expanded(flex: 1, child: LiveContest()),
+            const Expanded(flex: 1, child: LiveContest()),
           ],
         ),
       ),

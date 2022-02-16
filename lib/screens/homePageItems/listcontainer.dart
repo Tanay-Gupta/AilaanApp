@@ -63,7 +63,7 @@ class ListContainer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Text(
@@ -113,8 +113,8 @@ class ListContainer extends StatelessWidget {
                 SizedBox(
                   width: MediaQuery.of(context).size.width * .030,
                 ),
-                Container(
-                  //s color: Colors.red,
+                SizedBox(
+                  // color: Colors.red,
                   width: MediaQuery.of(context).size.width * .63,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

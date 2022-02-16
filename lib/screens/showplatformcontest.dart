@@ -22,7 +22,7 @@ class ContestDetailsScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xFFF5F4EF),
           // image: DecorationImage(
           //   image: AssetImage("assets/images/ux_big.png"),
@@ -32,7 +32,7 @@ class ContestDetailsScreen extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.only(left: 20, top: 50, right: 20),
+              padding: const EdgeInsets.only(left: 20, top: 50, right: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
@@ -43,7 +43,7 @@ class ContestDetailsScreen extends StatelessWidget {
                         onTap: () {
                           Navigator.pop(context);
                         },
-                        child: Container(
+                        child: SizedBox(
                             // color: Colors.green,
                             height: 30,
                             width: 30,
@@ -84,7 +84,7 @@ class ContestDetailsScreen extends StatelessWidget {
             Expanded(
               child: Container(
                 width: double.infinity,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(50),
                     topRight: Radius.circular(50),
@@ -96,8 +96,8 @@ class ContestDetailsScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text("Contest details", style: kTitleTextStyle),
-                      SizedBox(height: 5),
+                      const Text("Contest details", style: kTitleTextStyle),
+                      const SizedBox(height: 5),
                       Expanded(
                           child: LiveAndUpcomingContest(
                         contestUrl: contestUrl,

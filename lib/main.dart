@@ -1,5 +1,5 @@
+import 'package:contestalert/screens/homePageItems/seeal.dart';
 import 'package:contestalert/screens/homepage.dart';
-import 'package:contestalert/screens/showplatformcontest.dart';
 
 import 'package:flutter/material.dart';
 
@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(systemNavigationBarColor: Colors.white));
+      const SystemUiOverlayStyle(systemNavigationBarColor: Colors.white));
 
   runApp(const MyApp());
 }
@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(),
       // home: HomePage(),
       routes: {
-        '/': (context) => HomePage(),
-        //  '/allcontest': (context) => CodechefPage()
+        '/': (context) => const HomePage(),
+        '/allcontest': (context) => const SeeAll()
         // '/browser': (context) => InAppBro(),
       },
     );
