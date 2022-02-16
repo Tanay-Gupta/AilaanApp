@@ -47,7 +47,7 @@ var pictureId = {
   'LeetCode': 'assets/icons/leetcode.svg',
   'Kick Start': 'assets/icons/google.svg',
   'TopCoder': 'assets/icons/topcoder.svg',
-  'CS Academy': 'assets/icons/csAcadmey.png'
+  'CS Academy': 'assets/icons/csAcademy.svg'
 };
 List contestName = [
   'CodeChef',
@@ -58,7 +58,8 @@ List contestName = [
   'LeetCode',
   'Kick Start',
   'TopCoder',
-  'AtCoder'
+  'AtCoder',
+  'CS Academy'
 ];
 var contestWebsiteUrl = {
   'CodeChef': 'www.codechef.com',
@@ -81,7 +82,8 @@ var contestNameWithUrl = {
   'LeetCode': leetCodeUrl,
   'Kick Start': kickStartUrl,
   'TopCoder': topCoderUrl,
-  'AtCoder': atCoderUrl
+  'AtCoder': atCoderUrl,
+  'CS Academy': cSAcademyUrl
 };
 
 const String listOfSupportedSitesUrl = 'https://kontests.net/api/v1/sites';

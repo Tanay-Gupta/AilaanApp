@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "204583170409",
+    "project_id": "ailaan-1b23f",
+    "storage_bucket": "ailaan-1b23f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204583170409:android:998e51f7c20509a53fcdf8",
+        "android_client_info": {
+          "package_name": "com.tandroid.Ailaan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "204583170409-ocldb3asuk6ehqe157vro4mqvlh990mc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tandroid.Ailaan",
+            "certificate_hash": "dab3ce0ed8f41a5498951bc0371d79820f083bb8"
+          }
+        },
+        {
+          "client_id": "204583170409-78u8as6hv9jmbnlqctiuk5fr25ff9inn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEw4SWQ37wwU7m4KPOTyfg2zndwLotrME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "204583170409-78u8as6hv9jmbnlqctiuk5fr25ff9inn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

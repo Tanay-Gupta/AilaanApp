@@ -1,3 +1,4 @@
+import 'package:contestalert/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -28,16 +29,23 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   width: 10,
                 ),
                 const Text(
-                  'Contest Buzz',
+                  'Ailaan',
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 22,
+                      fontSize: 28,
                       fontWeight: FontWeight.bold),
                 ),
               ],
             ),
             Column(
               children: const <Widget>[
+                // NewRow(
+                //   text: 'My Account',
+                //   icon: Icons.person_outline,
+                // ),
+                // SizedBox(
+                //   height: 20,
+                // ),
                 NewRow(
                   text: 'Settings',
                   icon: Icons.settings,
@@ -45,37 +53,20 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 SizedBox(
                   height: 20,
                 ),
-                NewRow(
-                  text: 'Profile',
-                  icon: Icons.person_outline,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                NewRow(
-                  text: 'Upcoming ',
-                  icon: Icons.event,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                NewRow(
-                  text: 'My Reminders',
-                  icon: Icons.bookmark_border,
-                ),
+                NewRow(text: 'Notifications', icon: Icons.notifications),
                 SizedBox(
                   height: 20,
                 ),
                 NewRow(
                   text: 'About Dev',
-                  icon: Icons.favorite_border,
+                  icon: Icons.code,
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 NewRow(
-                  text: 'Disclaimer',
-                  icon: Icons.lightbulb_outline,
+                  text: 'Help Center',
+                  icon: Icons.help,
                 ),
                 SizedBox(
                   height: 20,
@@ -86,14 +77,14 @@ class _DrawerScreenState extends State<DrawerScreen> {
               children: <Widget>[
                 Icon(
                   Icons.cancel,
-                  color: Colors.white.withOpacity(0.5),
+                  color: Colors.white.withOpacity(0.0),
                 ),
                 const SizedBox(
                   width: 10,
                 ),
                 Text(
                   'Log out',
-                  style: TextStyle(color: Colors.white.withOpacity(0.5)),
+                  style: TextStyle(color: Colors.white.withOpacity(0.0)),
                 )
               ],
             )
