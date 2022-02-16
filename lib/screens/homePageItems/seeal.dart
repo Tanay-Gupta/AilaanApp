@@ -11,7 +11,8 @@ class SeeAll extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Material(
-        color: const Color(0xFFF5F4EF),
+        //  color: const Color(0xFFF5F4EF),
+        color: Colors.white,
         child: SafeArea(
           child: Column(
             children: [

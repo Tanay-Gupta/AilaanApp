@@ -1,5 +1,7 @@
+import 'package:contestalert/screens/drawerscreen.dart';
 import 'package:contestalert/screens/homePageItems/seeal.dart';
 import 'package:contestalert/screens/homepage.dart';
+import 'package:contestalert/screens/homescreen.dart';
 
 import 'package:flutter/material.dart';
 
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(),
       // home: HomePage(),
       routes: {
-        '/': (context) => const HomePage(),
+        '/': (context) => const HomeScreen(),
         '/allcontest': (context) => const SeeAll()
         // '/browser': (context) => InAppBro(),
       },
