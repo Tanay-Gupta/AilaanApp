@@ -18,6 +18,11 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
 
+    // Terminated State
+    FirebaseMessaging.instance.getInitialMessage().then((event) {
+      if (event != null) {}
+    });
+//foreground state
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       RemoteNotification? notification = message.notification;
       AndroidNotification? android = message.notification?.android;
@@ -39,6 +44,9 @@ class _HomeScreenState extends State<HomeScreen> {
             ));
       }
     });
+
+    // background State
+    FirebaseMessaging.onMessageOpenedApp.listen((event) {});
   }
 
   @override
