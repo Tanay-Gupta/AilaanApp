@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.blue,
                 styleInformation: const BigTextStyleInformation(''),
                 playSound: true,
-                icon: '@mipmap/ic_launcher',
+                icon: '@mipmap/notification',
               ),
             ));
       }
