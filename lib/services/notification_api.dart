@@ -9,7 +9,7 @@ class NotificationApi {
         'channel description',
         'channel name',
         enableLights: true,
-        icon: '@mipmap/ic_launcher',
+        icon: '@mipmap/notification',
         showWhen: true,
         importance: Importance.max,
         styleInformation: BigTextStyleInformation(''),

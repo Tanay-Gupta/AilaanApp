@@ -12,12 +12,12 @@ class SeeAll extends StatelessWidget {
     return Scaffold(
       body: Material(
         //  color: const Color(0xFFF5F4EF),
-        color: Colors.white,
+        color: Color(0xFFF5F5F5),
         child: SafeArea(
           child: Column(
             children: [
               const SizedBox(
-                height: 40,
+                height: 20,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 18, right: 18, bottom: 20),

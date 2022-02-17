@@ -1,7 +1,10 @@
 import 'package:contestalert/screens/drawerscreen.dart';
+import 'package:contestalert/screens/homePageItems/aboutme.dart';
 import 'package:contestalert/screens/homePageItems/seeal.dart';
 import 'package:contestalert/screens/homepage.dart';
 import 'package:contestalert/screens/homescreen.dart';
+import 'package:contestalert/screens/widgets/privacy.dart';
+import 'package:contestalert/screens/widgets/terms.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
@@ -9,6 +12,9 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+
+import 'screens/homePageItems/upcoming.dart';
+import 'services/themeProvider.dart';
 
 const AndroidNotificationChannel channel = AndroidNotificationChannel(
     'high_importance_channel', // id
@@ -58,12 +64,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Ailaan',
-      theme: ThemeData(),
+      themeMode: ThemeMode.light,
+      theme: MyThemes.lightTheme,
+      darkTheme: MyThemes.darkTheme,
+      // theme: ThemeData(
+
+      // ),
       // home: HomePage(),
       routes: {
         '/': (context) => const HomeScreen(),
-        '/allcontest': (context) => const SeeAll()
-        // '/browser': (context) => InAppBro(),
+        '/allcontest': (context) => const SeeAll(),
+        '/aboutme': (context) => const AboutMe(),
+        '/upcoming': (context) => const UpcomingContest(),
+        '/privacy': (context) => const PrivacyPolicy(),
+        '/terms': (context) => const TermsAndConditions()
       },
     );
   }

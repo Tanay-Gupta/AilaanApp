@@ -7,6 +7,7 @@ import 'package:lottie/lottie.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import '../../constants.dart';
 import 'package:intl/intl.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class ContestDetailContainer extends StatelessWidget {
   final String number;
@@ -114,14 +115,14 @@ class ContestDetailContainer extends StatelessWidget {
                                 body: title! + " will start in 24 hour",
                                 schedule: dateSub(startTime)
                                     .subtract(Duration(hours: 24)),
-                                payload: 'tanay.abs');
+                                payload: 'Ailaan.internal');
                             NotificationApi.showScheduledNotification(
                                 id: (title! + startTime).hashCode,
                                 title: "Hey Coder! 👋",
                                 body: title! + " will start in 1 hour",
                                 schedule: dateSub(startTime)
                                     .subtract(Duration(hours: 1)),
-                                payload: 'tanay.abs');
+                                payload: 'Ailaan.internal');
                             NotificationApi.showScheduledNotification(
                                 id: (title! + endTime).hashCode,
                                 title: "Hey Coder! 👋",
@@ -129,9 +130,17 @@ class ContestDetailContainer extends StatelessWidget {
                                     "$title will start in 5 min. All the Best 🤗",
                                 schedule: dateSub(startTime)
                                     .subtract(Duration(minutes: 5)),
-                                payload: 'tanay.abs');
+                                payload: 'Ailaan.internal');
 
                             Navigator.pop(context);
+                            Fluttertoast.showToast(
+                                msg: "Reminder set successfully",
+                                toastLength: Toast.LENGTH_SHORT,
+                                gravity: ToastGravity.CENTER,
+                                timeInSecForIosWeb: 2,
+                                backgroundColor: Colors.red,
+                                textColor: Colors.white,
+                                fontSize: 16.0);
                           },
                     child: Text(
                       isLive == false ? 'Set Reminder' : 'Open site',
