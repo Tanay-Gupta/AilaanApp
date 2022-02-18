@@ -108,21 +108,21 @@ class DetailContainer extends StatelessWidget {
                   onPressed: () async {
                     NotificationApi.showScheduledNotification(
                         id: title.hashCode,
-                        title: "Hey Coder! 👋",
+                        title: "Hey Buddy! 👋",
                         body: title! + " will start in 24 hour",
                         schedule:
                             dateSub(startTime).subtract(Duration(hours: 24)),
                         payload: 'Ailaan.internal');
                     NotificationApi.showScheduledNotification(
                         id: (title! + startTime).hashCode,
-                        title: "Hey Coder! 👋",
+                        title: "Hey Buddy! 👋",
                         body: title! + " will start in 1 hour",
                         schedule:
                             dateSub(startTime).subtract(Duration(hours: 1)),
                         payload: 'Ailaan.internal');
                     NotificationApi.showScheduledNotification(
                         id: (title! + endTime).hashCode,
-                        title: "Hey Coder! 👋",
+                        title: "Hey Buddy! 👋",
                         body: "$title will start in 5 min. All the Best 🤗",
                         schedule:
                             dateSub(startTime).subtract(Duration(minutes: 5)),
@@ -139,7 +139,7 @@ class DetailContainer extends StatelessWidget {
                         fontSize: 16.0);
                   },
                   child: Text(
-                    'Remind Me',
+                    'Remind',
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 )

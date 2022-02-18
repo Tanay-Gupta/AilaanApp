@@ -136,7 +136,9 @@ class AboutMe extends StatelessWidget {
                   Spacer(),
                   Text(
                     "Designed With ❤️ in India",
-                    style: TextStyle(color: Colors.black.withOpacity(.7)),
+                    style: kSubtitleTextSyle.copyWith(
+                      fontFamily: 'Poppins',
+                    ),
                   ),
                   SizedBox(
                     height: 10,

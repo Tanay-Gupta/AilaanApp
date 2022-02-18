@@ -6,10 +6,10 @@ class NotificationApi {
   static Future _notificationDetails() async {
     return const NotificationDetails(
       android: AndroidNotificationDetails(
-        'channel description',
-        'channel name',
+        'It alerts user about upcoming contest',
+        'Contest Alert',
         enableLights: true,
-        icon: '@mipmap/notification',
+        icon: '@mipmap/notif',
         showWhen: true,
         importance: Importance.max,
         styleInformation: BigTextStyleInformation(''),

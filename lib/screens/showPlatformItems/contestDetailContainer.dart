@@ -111,21 +111,21 @@ class ContestDetailContainer extends StatelessWidget {
                             // String body = ;
                             NotificationApi.showScheduledNotification(
                                 id: title.hashCode,
-                                title: "Hey Coder! 👋",
+                                title: "Hey Buddy! 👋",
                                 body: title! + " will start in 24 hour",
                                 schedule: dateSub(startTime)
                                     .subtract(Duration(hours: 24)),
                                 payload: 'Ailaan.internal');
                             NotificationApi.showScheduledNotification(
                                 id: (title! + startTime).hashCode,
-                                title: "Hey Coder! 👋",
+                                title: "Hey Buddy! 👋",
                                 body: title! + " will start in 1 hour",
                                 schedule: dateSub(startTime)
                                     .subtract(Duration(hours: 1)),
                                 payload: 'Ailaan.internal');
                             NotificationApi.showScheduledNotification(
                                 id: (title! + endTime).hashCode,
-                                title: "Hey Coder! 👋",
+                                title: "Hey Buddy! 👋",
                                 body:
                                     "$title will start in 5 min. All the Best 🤗",
                                 schedule: dateSub(startTime)

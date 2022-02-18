@@ -15,6 +15,8 @@ class PrivacyPolicy extends StatelessWidget {
       body: Material(
         child: SafeArea(
           child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(
+                parent: AlwaysScrollableScrollPhysics()),
             child: Column(
               children: [
                 const SizedBox(
@@ -52,6 +54,8 @@ class PrivacyPolicy extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(30.0),
                   child: SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(
+                        parent: AlwaysScrollableScrollPhysics()),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

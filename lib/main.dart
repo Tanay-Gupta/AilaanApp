@@ -39,7 +39,12 @@ Future<void> main() async {
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
   SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(systemNavigationBarColor: Colors.white));
+    const SystemUiOverlayStyle(
+        systemNavigationBarColor: Colors.white,
+        statusBarColor: Colors.transparent,
+        // statusBarBrightness: Brightness.dark,
+        statusBarIconBrightness: Brightness.dark),
+  );
 
   await flutterLocalNotificationsPlugin
       .resolvePlatformSpecificImplementation<

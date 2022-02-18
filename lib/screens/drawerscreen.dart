@@ -20,10 +20,10 @@ class _DrawerScreenState extends State<DrawerScreen> {
         padding: const EdgeInsets.only(top: 50, left: 40, bottom: 8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             SizedBox(
-              height: 5,
+              height: 40,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 0),
@@ -47,7 +47,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 120,
             ),
             Column(
               children: <Widget>[
@@ -70,7 +70,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                       Navigator.pushNamed(context, '/upcoming');
                     },
                     child: const NewRow(
-                        text: 'Upcoming', icon: Icons.calendar_today)),
+                        text: 'Upcoming Contest', icon: Icons.calendar_today)),
                 const SizedBox(
                   height: 20,
                 ),
@@ -92,7 +92,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   },
                   child: const NewRow(
                     text: 'Privacy Policy',
-                    icon: Icons.data_usage,
+                    icon: Icons.policy,
                   ),
                 ),
                 const SizedBox(
@@ -102,50 +102,44 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   onTap: () {
                     Navigator.pushNamed(context, "/terms");
                   },
-                  child: const NewRow(
-                    text: 'Terms & Conditions',
-                    icon: Icons.link,
-                  ),
+                  child: const NewRow(text: 'Terms', icon: Icons.book),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                InkWell(
-                  onTap: () {
-                    Alert(
-                      context: context,
-                      title: "Disclaimer",
-                      style: AlertStyle(titleStyle: kTitleTextStyle),
-                      padding: EdgeInsets.all(30),
-                      content: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: <Widget>[
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            "This is not an official App provided by any coding platform. Neither this app nor the developer are affiliated with Codechef, Codeforces, Kickstart, Hackerrank, HackerEarth, ATcoder, csAcademy, LeetCode, TopCoder.\n\nThe user shall be held solely responsible for any damage that could be done by it's reproduction and/or use.\n\n Happy Coding 😊",
-                            style: kSubtitleTextSyle.copyWith(
-                                fontSize: 17, overflow: TextOverflow.visible),
-                          ),
-                        ],
-                      ),
-                    ).show();
-                  },
-                  child: const NewRow(
-                    text: 'Disclaimer',
-                    icon: Icons.warning,
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
+                // InkWell(
+                //   onTap: () {
+                //     Alert(
+                //       context: context,
+                //       title: "Disclaimer",
+                //       style: AlertStyle(titleStyle: kTitleTextStyle),
+                //       padding: EdgeInsets.all(30),
+                //       content: Column(
+                //         mainAxisAlignment: MainAxisAlignment.center,
+                //         crossAxisAlignment: CrossAxisAlignment.end,
+                //         children: <Widget>[
+                //           SizedBox(
+                //             height: 20,
+                //           ),
+                //           Text(
+                //             "This is not an official App provided by any coding platform. Neither this app nor the developer are affiliated with Codechef, Codeforces, Kickstart, Hackerrank, HackerEarth, ATcoder, csAcademy, LeetCode, TopCoder.\n\nThe user shall be held solely responsible for any damage that could be done by it's reproduction and/or use.\n\n Happy Coding 😊",
+                //             style: kSubtitleTextSyle.copyWith(
+                //                 fontSize: 17, overflow: TextOverflow.visible),
+                //           ),
+                //         ],
+                //       ),
+                //     ).show();
+                //   },
+                //   child: const NewRow(
+                //     text: 'Disclaimer',
+                //     icon: Icons.warning,
+                //   ),
+                // ),
               ],
             ),
-            const SizedBox(
-              height: 150,
-            ),
+            // const SizedBox(
+            //   height: 150,
+            // ),
           ],
         ),
       ),

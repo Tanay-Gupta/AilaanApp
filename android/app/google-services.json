@@ -7,17 +7,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:204583170409:android:998e51f7c20509a53fcdf8",
+        "mobilesdk_app_id": "1:204583170409:android:5fd562ee337bb3a43fcdf8",
         "android_client_info": {
-          "package_name": "com.tandroid.Ailaan"
+          "package_name": "com.tandroidapps.Ailaan"
         }
       },
       "oauth_client": [
         {
-          "client_id": "204583170409-ocldb3asuk6ehqe157vro4mqvlh990mc.apps.googleusercontent.com",
+          "client_id": "204583170409-hmah4s24ik03m3u2lkl1dkgunbb8cj2j.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.tandroid.Ailaan",
+            "package_name": "com.tandroidapps.Ailaan",
             "certificate_hash": "dab3ce0ed8f41a5498951bc0371d79820f083bb8"
           }
         },
