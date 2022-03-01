@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:contestalert/services/notification_api.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -52,16 +53,31 @@ class ContestDetailContainer extends StatelessWidget {
     return (updatedDt);
   }
 
+  // ignore: non_constant_identifier_names
+  String duration_to_noramal(String duration) {
+    double hour = double.parse(duration);
+
+    hour = (hour / 3600).floorToDouble();
+    double min = double.parse(duration);
+    min = min % 3600;
+    min = (min / 60).floorToDouble();
+    if (min == 0.0) {
+      return (hour.toString().substring(0, hour.toString().indexOf('.')) +
+          " Hr");
+    }
+
+    return (hour.toString().substring(0, hour.toString().indexOf('.')) +
+        " Hr & " +
+        min.toString().substring(0, min.toString().indexOf('.')) +
+        " Min");
+  }
+
   @override
   Widget build(BuildContext context) {
     String starttime = utcToLocal(startTime);
     String endtime = utcToLocal(endTime);
-    String durationInhour = Duration(
-            seconds: int.parse(durationInHr.indexOf('.') != -1
-                ? durationInHr.substring(0, durationInHr.indexOf('.') - 1)
-                : durationInHr))
-        .inHours
-        .toString();
+
+    String durationInhour = duration_to_noramal(durationInHr);
 
     return Material(
       color: Colors.white,
@@ -70,6 +86,7 @@ class ContestDetailContainer extends StatelessWidget {
         child: InkWell(
           // highlightColor: Colors.transparent,
           onTap: () {
+            // print(duration_to_noramal(durationInHr));
             Alert(
                 context: context,
                 title: "$title",
@@ -84,7 +101,7 @@ class ContestDetailContainer extends StatelessWidget {
                       height: 20,
                     ),
                     Text(
-                      "Start: $starttime\n\nEnd: $endtime\n\nDuration: $durationInhour Hour",
+                      "Start: $starttime\n\nEnd: $endtime\n\nDuration: $durationInhour",
                       style: kSubtitleTextSyle.copyWith(fontSize: 17),
                     ),
                   ],
@@ -108,7 +125,6 @@ class ContestDetailContainer extends StatelessWidget {
                             //   throw 'Could not launch $contestUrl';
                           }
                         : () {
-                            // String body = ;
                             NotificationApi.showScheduledNotification(
                                 id: title.hashCode,
                                 title: "Hey Buddy! 👋",

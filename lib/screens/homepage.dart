@@ -44,9 +44,9 @@ class _HomePageState extends State<HomePage> {
               details.delta.dy > 0 &&
               details.delta.dy < 1) {
             if (isDrawerOpen == false) {
-              if (await Vibration.hasVibrator()) {
-                Vibration.vibrate(duration: 30);
-              }
+              // if (await Vibration.hasVibrator()) {
+              //   Vibration.vibrate(duration: 30);
+              // }
               setState(() {
                 xOffset = 290;
                 yOffset = 80;
@@ -58,9 +58,9 @@ class _HomePageState extends State<HomePage> {
           // Swiping in left direction.
           if (details.delta.dx < 0) {
             if (isDrawerOpen == true) {
-              if (await Vibration.hasVibrator()) {
-                Vibration.vibrate(duration: 30);
-              }
+              // if (await Vibration.hasVibrator()) {
+              //   Vibration.vibrate(duration: 30);
+              // }
               setState(() {
                 xOffset = 0;
                 yOffset = 0;

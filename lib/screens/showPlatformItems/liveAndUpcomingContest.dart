@@ -1,6 +1,6 @@
 // ignore: file_names
 import 'package:contestalert/constants.dart';
-import 'package:contestalert/screens/showPlatformItems/contestDetailContainer.dart';
+import 'package:contestalert/screens/showPlatformItems/contestdetailcontainer.dart';
 import 'package:contestalert/services/api_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';

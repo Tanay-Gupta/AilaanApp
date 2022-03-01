@@ -39,16 +39,30 @@ class ListContainer extends StatelessWidget {
     return (updatedDt);
   }
 
+  // ignore: non_constant_identifier_names
+  String duration_to_noramal(String duration) {
+    double hour = double.parse(duration);
+
+    hour = (hour / 3600).floorToDouble();
+    double min = double.parse(duration);
+    min = min % 3600;
+    min = (min / 60).floorToDouble();
+    if (min == 0.0) {
+      return (hour.toString().substring(0, hour.toString().indexOf('.')) +
+          " Hr");
+    }
+
+    return (hour.toString().substring(0, hour.toString().indexOf('.')) +
+        " Hr & " +
+        min.toString().substring(0, min.toString().indexOf('.')) +
+        " Min");
+  }
+
   @override
   Widget build(BuildContext context) {
     String starttime = utcToLocal(startTime);
     String endtime = utcToLocal(endTime);
-    String durationInhour = Duration(
-            seconds: int.parse(durationInHr.indexOf('.') != -1
-                ? durationInHr.substring(0, durationInHr.indexOf('.') - 1)
-                : durationInHr))
-        .inHours
-        .toString();
+    String durationInhour = duration_to_noramal(durationInHr);
     return Padding(
       padding: const EdgeInsets.only(bottom: 30),
       child: InkWell(
@@ -67,7 +81,7 @@ class ListContainer extends StatelessWidget {
                     height: 20,
                   ),
                   Text(
-                    "Start: $starttime\n\nEnd: $endtime\n\nTime: $durationInhour Hr",
+                    "Start: $starttime\n\nEnd: $endtime\n\nTime: $durationInhour",
                     style: kSubtitleTextSyle.copyWith(fontSize: 17),
                   ),
                 ],
