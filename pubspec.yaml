@@ -51,7 +51,6 @@ dependencies:
   google_fonts: 2.1.0
  
   fluttertoast: ^8.0.8
-  vibration: ^1.7.3
  
 
   
