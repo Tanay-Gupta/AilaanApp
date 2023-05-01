@@ -3,7 +3,11 @@
 
 Ailaan brings all running and future coding contest schedules between your hands from many different Coding Platforms. We believe we can save your time and let you touch the information from different sites, in one app. Ailaan App can set reminders for the upcoming coding contest so you don't miss any contest. This Application is designed to work in every Time Zone, giving you the correct contest time according to your TimeZone.
 
-
+<a href="https://play.google.com/store/apps/details?id=com.tandroidapps.Ailaan">
+    <img alt="Get it on Google Play"
+        height="80"
+        src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" />
+</a>
 
 ## Features
 
@@ -31,14 +35,28 @@ Ailaan brings all running and future coding contest schedules between your hands
 
 
 ## Screenshots
-
-![App Screenshot](Screenshots/1.png)
-![App Screenshot](Screenshots/2.png)
-![App Screenshot](Screenshots/3.png)
-![App Screenshot](Screenshots/4.png)
-![App Screenshot](Screenshots/5.png)
-![App Screenshot](Screenshots/6.png)
-![App Screenshot](Screenshots/7.png)
+<img alt="Get it on Google Play"
+        height="350"
+        src="https://github.com/Tanay-Gupta/AilaanApp/blob/c9ce8d8b116b2fa60b84f7f73a2d41a2fde0317e/Screenshots/1.png" />
+<img alt="Get it on Google Play"
+        height="350"
+        src="https://github.com/Tanay-Gupta/AilaanApp/blob/c9ce8d8b116b2fa60b84f7f73a2d41a2fde0317e/Screenshots/2.png" />
+        <img alt="Get it on Google Play"
+        height="350"
+        src="https://github.com/Tanay-Gupta/AilaanApp/blob/c9ce8d8b116b2fa60b84f7f73a2d41a2fde0317e/Screenshots/3.png" />
+        <img alt="Get it on Google Play"
+        height="350"
+        src="https://github.com/Tanay-Gupta/AilaanApp/blob/c9ce8d8b116b2fa60b84f7f73a2d41a2fde0317e/Screenshots/4.png" />
+        <img alt="Get it on Google Play"
+        height="350"
+        src="https://github.com/Tanay-Gupta/AilaanApp/blob/c9ce8d8b116b2fa60b84f7f73a2d41a2fde0317e/Screenshots/5.png" />
+        <img alt="Get it on Google Play"
+        height="350"
+        src="https://github.com/Tanay-Gupta/AilaanApp/blob/c9ce8d8b116b2fa60b84f7f73a2d41a2fde0317e/Screenshots/6.png" />
+        <img alt="Get it on Google Play"
+        height="350"
+        src="https://github.com/Tanay-Gupta/AilaanApp/blob/c9ce8d8b116b2fa60b84f7f73a2d41a2fde0317e/Screenshots/7.png" />
+        
 
 
 
